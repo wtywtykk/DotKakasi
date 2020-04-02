@@ -7,7 +7,7 @@ for f in INPUT_FILES:
         input = open(source, 'rb')
         s = input.read()
         input.close()
-        dest = os.path.join('./_gz', f+'.gz')
+        dest = os.path.join('./_gz', f.replace('json','gz'))
         output = gzip.GzipFile(dest, 'wb')
         output.write(s)
         output.close()

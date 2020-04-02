@@ -39,7 +39,7 @@ Namespace DotKakasi
             If &H3400 <= AscW(Cha) AndAlso AscW(Cha) < &HE000 Then
                 Return True
             End If
-            If &HF900 <= AscW(Cha) AndAlso AscW(Cha) < &HFA2E Then
+            If _itaiji.haskey(Cha) Then
                 Return True
             End If
             Return False
@@ -63,10 +63,11 @@ Namespace DotKakasi
             Return False
         End Function
 
-        Private Function convert_h(ByVal Text As String) As Tuple(Of String, Integer)
+        Private Function convert_h(ByVal iText As String) As Tuple(Of String, Integer)
             Dim max_len As Integer = 0
             Dim Hstr As String = ""
-            Text = _itaiji.convert(Text)
+            Dim Text As String = _itaiji.convert(iText)
+            Dim num_vs = iText.Length - Text.Length
             Dim table = _kanwa.load(Text(0))
             If IsNothing(table) Then
                 Return Tuple.Create("", 0)
@@ -94,7 +95,27 @@ Namespace DotKakasi
                     End If
                 End If
             Next
+            For i = 0 To num_vs - 1 'when converting string with kanji wit variation selector, calculate max_len again
+                If max_len > iText.Length Then
+                    Exit For
+                ElseIf Text(max_len - 1) <> iText(max_len - 1) Then
+                    max_len += 1
+                ElseIf max_len < num_vs + Text.Length AndAlso max_len <= iText.Length AndAlso _is_vschr(iText(max_len)) Then
+                    max_len += 1
+                End If
+            Next
             Return Tuple.Create(Hstr, max_len)
+        End Function
+
+        Private Function _is_vschr(Cha As Char) As Boolean
+            Dim c As Integer = AscW(Cha)
+            If &HE0100 <= c AndAlso c <= &HE1EF Then
+                Return True
+            End If
+            If &HFE00 <= c AndAlso c <= &HFE02 Then
+                Return True
+            End If
+            Return False
         End Function
 
         Private Function convert_nonh(Text As String) As Tuple(Of String, Integer)
@@ -158,6 +179,10 @@ Namespace DotKakasi
                 End SyncLock
             End If
         End Sub
+
+        Public Function haskey(c As Char) As Boolean
+            Return _itaijidict.ContainsKey(c)
+        End Function
 
         Public Function convert(Text As String) As String
             Dim Ret As String = ""
