@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DotKakasi", "DotKakasi\DotKakasi.vbproj", "{BFE6570D-F92B-470F-B61A-111B88F5055C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KakasiTest", "KakasiTest\KakasiTest.vbproj", "{7DE99E60-3BF0-4E00-B1D4-806B931828AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFE6570D-F92B-470F-B61A-111B88F5055C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE6570D-F92B-470F-B61A-111B88F5055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE6570D-F92B-470F-B61A-111B88F5055C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE6570D-F92B-470F-B61A-111B88F5055C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE99E60-3BF0-4E00-B1D4-806B931828AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE99E60-3BF0-4E00-B1D4-806B931828AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE99E60-3BF0-4E00-B1D4-806B931828AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE99E60-3BF0-4E00-B1D4-806B931828AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A97C6722-1E25-4227-8C0A-770E44B50E63}
+	EndGlobalSection
+EndGlobal
