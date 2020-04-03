@@ -45,7 +45,7 @@ Namespace DotKakasi
         Public Shared ReadOnly zenkaku_number_nine As Integer = &HFF1A
         Public Shared ReadOnly zenkaku_A_Upper As Integer = &HFF21
         Public Shared ReadOnly zenkaku_a_Lower As Integer = &HFF41
-        Public Shared ReadOnly endmark() As Char = {")", "]", "!", ",", ".", "\u3001", "\u3002"}
+        Public Shared ReadOnly endmark() As Char = {")", "]", "!", ",", ".", ChrW(&H3001), ChrW(&H3002)}
     End Class
 
     Public Class Convert_Tables
@@ -116,38 +116,38 @@ Namespace DotKakasi
                       ",", "-", ".", "/"}
         ' cyriilic
         Public Shared ReadOnly cyrillic_table As New Dictionary(Of Char, String) From {  ' basic cyrillic characters
-        {"\u0410", "A"}, {"\u0411", "B"}, {"\u0412", "V"}, ' АБВ
-        {"\u0413", "G"}, {"\u0414", "D"}, {"\u0415", "E"}, ' ГДЕ
-        {"\u0401", "E"}, {"\u0416", "Zh"}, {"\u0417", "Z"}, ' ЁЖЗ
-        {"\u0418", "I"}, {"\u0419", "Y"}, {"\u041a", "K"}, ' ИЙК
-        {"\u041b", "L"}, {"\u041c", "M"}, {"\u041d", "N"}, ' ЛМН
-        {"\u041e", "O"}, {"\u041f", "P"}, {"\u0420", "R"}, ' ОПР
-        {"\u0421", "S"}, {"\u0422", "T"}, {"\u0423", "U"}, ' СТУ
-        {"\u0424", "F"}, {"\u0425", "H"}, {"\u0426", "Ts"}, ' ФХЦ
-        {"\u0427", "Ch"}, {"\u0428", "Sh"}, {"\u0429", "Sch"}, ' ЧШЩ
-        {"\u042a", ""}, {"\u042b", "Y"}, {"\u042c", ""}, ' ЪЫЬ
-        {"\u042d", "E"}, {"\u042e", "Yu"}, {"\u042f", "Ya"}, ' ЭЮЯ
-        {"\u0430", "a"}, {"\u0431", "b"}, {"\u0432", "v"}, ' абв
-        {"\u0433", "g"}, {"\u0434", "d"}, {"\u0435", "e"}, ' где
-        {"\u0451", "e"}, {"\u0436", "zh"}, {"\u0437", "z"}, ' ёжз
-        {"\u0438", "i"}, {"\u0439", "y"}, {"\u043a", "k"}, ' ийк
-        {"\u043b", "l"}, {"\u043c", "m"}, {"\u043d", "n"}, ' лмн
-        {"\u043e", "o"}, {"\u043f", "p"}, {"\u0440", "r"}, ' опр
-        {"\u0441", "s"}, {"\u0442", "t"}, {"\u0443", "u"}, ' сту
-        {"\u0444", "f"}, {"\u0445", "h"}, {"\u0446", "ts"}, ' фхц
-        {"\u0447", "ch"}, {"\u0448", "sh"}, {"\u0449", "sch"}, ' чшщ
-        {"\u044a", ""}, {"\u044b", "y"}, {"\u044c", ""}, ' ъыь
-        {"\u044d", "e"}, {"\u044e", "yu"}, {"\u044f", "ya"}  ' эюя
+        {ChrW(&H410), "A"}, {ChrW(&H411), "B"}, {ChrW(&H412), "V"}, ' АБВ
+        {ChrW(&H413), "G"}, {ChrW(&H414), "D"}, {ChrW(&H415), "E"}, ' ГДЕ
+        {ChrW(&H401), "E"}, {ChrW(&H416), "Zh"}, {ChrW(&H417), "Z"}, ' ЁЖЗ
+        {ChrW(&H418), "I"}, {ChrW(&H419), "Y"}, {ChrW(&H41A), "K"}, ' ИЙК
+        {ChrW(&H41B), "L"}, {ChrW(&H41C), "M"}, {ChrW(&H41D), "N"}, ' ЛМН
+        {ChrW(&H41E), "O"}, {ChrW(&H41F), "P"}, {ChrW(&H420), "R"}, ' ОПР
+        {ChrW(&H421), "S"}, {ChrW(&H422), "T"}, {ChrW(&H423), "U"}, ' СТУ
+        {ChrW(&H424), "F"}, {ChrW(&H425), "H"}, {ChrW(&H426), "Ts"}, ' ФХЦ
+        {ChrW(&H427), "Ch"}, {ChrW(&H428), "Sh"}, {ChrW(&H429), "Sch"}, ' ЧШЩ
+        {ChrW(&H42A), ""}, {ChrW(&H42B), "Y"}, {ChrW(&H42C), ""}, ' ЪЫЬ
+        {ChrW(&H42D), "E"}, {ChrW(&H42E), "Yu"}, {ChrW(&H42F), "Ya"}, ' ЭЮЯ
+        {ChrW(&H430), "a"}, {ChrW(&H431), "b"}, {ChrW(&H432), "v"}, ' абв
+        {ChrW(&H433), "g"}, {ChrW(&H434), "d"}, {ChrW(&H435), "e"}, ' где
+        {ChrW(&H451), "e"}, {ChrW(&H436), "zh"}, {ChrW(&H437), "z"}, ' ёжз
+        {ChrW(&H438), "i"}, {ChrW(&H439), "y"}, {ChrW(&H43A), "k"}, ' ийк
+        {ChrW(&H43B), "l"}, {ChrW(&H43C), "m"}, {ChrW(&H43D), "n"}, ' лмн
+        {ChrW(&H43E), "o"}, {ChrW(&H43F), "p"}, {ChrW(&H440), "r"}, ' опр
+        {ChrW(&H441), "s"}, {ChrW(&H442), "t"}, {ChrW(&H443), "u"}, ' сту
+        {ChrW(&H444), "f"}, {ChrW(&H445), "h"}, {ChrW(&H446), "ts"}, ' фхц
+        {ChrW(&H447), "ch"}, {ChrW(&H448), "sh"}, {ChrW(&H449), "sch"}, ' чшщ
+        {ChrW(&H44A), ""}, {ChrW(&H44B), "y"}, {ChrW(&H44C), ""}, ' ъыь
+        {ChrW(&H44D), "e"}, {ChrW(&H44E), "yu"}, {ChrW(&H44F), "ya"}  ' эюя
     }
 
-        Public Shared ReadOnly alpha_table_1() As String = {"\u3000", "\uff01", "\uff02", "\uff03", "\uff04", "\uff05", "\uff06",
-                     "\uff07", "\uff08", "\uff09", "\uff0a", "\uff0b", "\uff0c", "\uff0d",
-                     "\uff0e", "\uff0f",  ' ！＂＃＄％&＇（）＊＋，－．／
-                     "\uff10", "\uff11", "\uff12", "\uff13", "\uff14", "\uff15", "\uff16",
-                     "\uff17", "\uff18", "\uff19",  ' ０...９
-                     "\uff1a", "\uff1b", "\uff1c", "\uff1d",
-                     "\uff1e", "\uff1f", "\uff20"}  ' ：；＜＝＞？＠
-        Public Shared ReadOnly alpha_table_2() As String = {"\uff3b", "\uff3c", "\uff3d", "\uff3e", "\uff3f", "\uff40"}  ' ［＼］＾＿｀
-        Public Shared ReadOnly alpha_table_3() As String = {"\uff5b", "\uff5c", "\uff5d", "\uff5e"}  ' ｛｜｝～
+        Public Shared ReadOnly alpha_table_1() As String = {ChrW(&H3000), ChrW(&HFF01), ChrW(&HFF02), ChrW(&HFF03), ChrW(&HFF04), ChrW(&HFF05), ChrW(&HFF06),
+                     ChrW(&HFF07), ChrW(&HFF08), ChrW(&HFF09), ChrW(&HFF0A), ChrW(&HFF0B), ChrW(&HFF0C), ChrW(&HFF0D),
+                     ChrW(&HFF0E), ChrW(&HFF0F),  ' ！＂＃＄％&＇（）＊＋，－．／
+                     ChrW(&HFF10), ChrW(&HFF11), ChrW(&HFF12), ChrW(&HFF13), ChrW(&HFF14), ChrW(&HFF15), ChrW(&HFF16),
+                     ChrW(&HFF17), ChrW(&HFF18), ChrW(&HFF19),  ' ０...９
+                     ChrW(&HFF1A), ChrW(&HFF1B), ChrW(&HFF1C), ChrW(&HFF1D),
+                     ChrW(&HFF1E), ChrW(&HFF1F), ChrW(&HFF20)}  ' ：；＜＝＞？＠
+        Public Shared ReadOnly alpha_table_2() As String = {chrw(&hff3b), chrw(&hff3c), chrw(&hff3d), chrw(&hff3e), chrw(&hff3f), chrw(&hff40)}  ' ［＼］＾＿｀
+        Public Shared ReadOnly alpha_table_3() As String = {ChrW(&HFF5B), ChrW(&HFF5C), ChrW(&HFF5D), ChrW(&HFF5E)}  ' ｛｜｝～
     End Class
 End Namespace

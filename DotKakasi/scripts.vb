@@ -178,7 +178,7 @@ Namespace DotKakasi
                     Hstr = Hstr + ChrW(c - _ediff)
                     max_len += 1
                 ElseIf c = &H1B167 Then
-                    Hstr = Hstr + "\u3093"
+                    Hstr = Hstr + ChrW(&H3093)
                     max_len += 1
                 ElseIf &H30A0 < c AndAlso c < &H30F7 Then
                     Hstr = Hstr + ChrW(c - _diff)

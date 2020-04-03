@@ -15,6 +15,7 @@ Module Module1
             Next
         Next
 
+        k.setMode("E", "a") ' symbol To ascii, Default: no Conversion
         k.setMode("H", "a") ' Hiragana To ascii, Default: no Conversion
         k.setMode("K", "a") ' Katakana To ascii, Default: no Conversion
         k.setMode("J", "a") ' Japanese To ascii, Default: no Conversion
@@ -25,7 +26,7 @@ Module Module1
         Console.WriteLine(k.do_("かな漢字交じり文"))
         Console.WriteLine(k.do_("せーのっ！"))
         Console.WriteLine(k.do_("（ホﾟクホﾟクホﾟクホﾟクホﾟクホﾟクホﾟ）"))
-        Console.WriteLine(k.do_("（書記のチカ、書記のチカ、ラー！）"))
+        Console.WriteLine(k.do_("ЭЮЯ（書記のチカ、書記のチカ、ラー！）"))
     End Sub
 
 End Module
